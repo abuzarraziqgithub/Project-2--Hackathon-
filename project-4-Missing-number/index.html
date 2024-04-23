@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find Missing Number</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        width: 60%;
+        margin: auto;
+        background-color: #f7f7f7;
+        padding: 20px;
+        border-radius: 4px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+      }
+      .container h1,
+      .container h2 {
+        text-align: center;
+      }
+      .container p {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Find Missing Number</h1>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      var numbers = [11, 12, 14, 15, 16, 18, 19, 20];
+
+      function findMissingNumber(numbers) {
+        for (var i = 1; i < numbers.length; i++) {
+          if (numbers[i] - numbers[i - 1] != 1) {
+            return numbers[i - 1] + 1;
+          }
+        }
+        return null;
+      }
+
+      // Find the missing number
+      var missingNumber = findMissingNumber(numbers);
+
+      // Display the result
+      document.getElementById("result").textContent =
+        "Missing Number: " + missingNumber;
+    </script>
+  </body>
+</html>
